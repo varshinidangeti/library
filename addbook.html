@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> 
+    <title>ADD BOOK</title>
+    
+</head>
+<body>
+    <center>
+        <div class="transparent-border">
+        <h1>ADD BOOK</h1>
+        <form id="addbookForm">
+            <label for="name">BOOK NAME:</label>
+            <input type="text" id="name" placeholder="Enter the book name here" required><br>
+            <label for="price">PRICE:</label>
+            <input type="number" id="price" placeholder="Enter price of the book here" required><br>
+            <label for="status">STATUS:</label>
+            <input type="text" id="status" placeholder="Enter the book status here" required><br>
+            <button type="submit">Add book</button>
+        </form>
+        </div>
+    </center>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('addbookForm').addEventListener('submit', async function(event) {
+                event.preventDefault();
+                const name = document.getElementById('name').value;
+                const price = document.getElementById('price').value;
+                const status = document.getElementById('status').value;
+
+                try {
+                    const response = await fetch('http://localhost:3000/addbook', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ name, price, status }),
+                    });
+                    const result = await response.text();
+                    console.log('Response:', result);
+
+                    if (response.ok) {
+                        alert('Book added successfully!');
+                        
+                    } else {
+                        alert(result || 'Error adding book!');
+                    }
+                } catch (error) {
+                    console.error('Error during book addition:', error);
+                    alert('Error adding book!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            background-image: url('lib.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh; /* Ensure the body covers the full height of the viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .profile-container {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 40px;
+            border-radius: 10px;
+          
+            max-width: 500px; /* Adjust width as needed */
+            width: 100%;
+            text-align: center; /* Center the content inside the box */
+            color: white; /* White text color */
+        }
+
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .profile-header img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+        }
+
+        .profile-details {
+            margin-top: 20px;
+        }
+
+        .profile-details h2 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .profile-details p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .edit-profile-btn {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .edit-profile-btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="profile.jpg" alt="">
+            <h1>Varshini Dangeti</h1> <!-- Replace with dynamic content if needed -->
+        </div>
+
+        <div class="profile-details">
+            <h2>Profile Details</h2>
+            <p><strong>Email:</strong> dangetivarshini17@gmail.com</p> <!-- Replace with dynamic content -->
+            <p><strong>Username:</strong> Varshini Dangeti</p> <!-- Replace with dynamic content -->
+            <p><strong>Member Since:</strong> January 1, 2022</p> <!-- Replace with dynamic content -->
+
+            <!-- Add other details as needed, like phone number, address, etc. -->
+
+            <a href="edit.html" class="edit-profile-btn">Edit Profile</a>
+        </div>
+    </div>
+
+</body>
+</html>

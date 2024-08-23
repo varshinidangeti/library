@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Page</title>
+  <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <center>
+      <div class="transparent-border">
+        <h1>Signup</h1>
+        
+        <form id="signupForm">
+          <label for="username">Username:</label>
+          <input type="text" id="username" placeholder="Username" required><br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="Password" required><br>
+          
+          <a href="index.html">Already have an account? Sign in</a><br>
+          
+          <button type="submit">Signup</button>
+        </form>
+      </div>
+    </center>
+    
+    <script>
+      document.getElementById('signupForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+          const response = await fetch('http://localhost:3000/signup', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, password }),
+          });
+
+          if (response.ok) {
+            const result = await response.json();
+            alert('Signup successful! User ID: ' + result._id);
+            window.location.href = 'home.html'; 
+          } else {
+            const errorText = await response.text();
+            console.error('Signup failed:', errorText);
+            alert('Signup failed! ' + errorText);
+          }
+        } catch (error) {
+          console.error('Error during signup:', error);
+          alert('Signup failed! Please check your network or server.');
+        }
+      });
+    </script>
+</body>
+</html>

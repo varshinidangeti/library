@@ -1,0 +1,182 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background-color:black;
+  
+}
+a{
+  color:white;
+}
+ul {
+list-style-type: none; 
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: rgb(76, 46, 10);
+position: none;
+top: 0;
+width: 100%;
+}
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 700px; /* Adjusted width for additional button */
+  margin: auto;
+}
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allows buttons to wrap if needed */
+}
+.button-group button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+}
+.button-group button:hover {
+  background-color: #0056b3;
+}
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.icon-add::before {
+  content: '+';
+  font-size: 24px;
+}
+.icon-delete::before {
+  content: '🗑️';
+  font-size: 20px;
+}
+.icon-return::before {
+  content: '🔙';
+  font-size: 20px;
+}
+.icon-take::before {
+  content: '📦'; /* Box emoji for 'Take Item' */
+  font-size: 20px;
+}
+li {
+float: left;
+}
+
+li a {
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+li a:hover:not(.active) {
+background-color: rgb(104, 85, 62);
+}
+
+.active {
+background-color: rgb(74, 11, 11);
+}
+.title{
+color:white;
+font-size: 40px;
+text-align: center;
+}
+.image-container {
+  position: relative;
+  width: 170px;
+  height: 200px;
+  margin-right: 10px; /* Add margin between columns */
+  margin-bottom: 10px; /* Add margin between rows */
+  float: left;
+  padding: 5px;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 4%; /* Square top left corner */
+  border-top-right-radius: 4%; /* Square top right corner */
+  border-bottom-left-radius: 5%; /* Rounded bottom left corner */
+  border-bottom-right-radius: 5%; /* Rounded bottom right corner */
+}
+.text-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  padding: 5px 0;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.title{
+  text-align: center;
+  color:white;
+  font-size: 40px;
+}
+.categories{
+  color: white;
+  font-size: 28px;
+}
+@media screen and (max-width: 600px) {
+  
+  
+  .image-container {
+      width: 100%;
+      height: auto;
+      margin-right: 0; /* Remove margin for mobile */
+      margin-bottom: 10px; /* Keep margin between rows */
+  }
+  .image, .text-overlay {
+      width: 100%;
+      height: auto;
+  }
+  .full-width {
+      width: 100%;
+      height: auto;
+  }
+} 
+
+        body {
+            background-image: url('lib.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh; /* Ensure the body covers the full height of the viewport */
+        }
+        .transparent-border {
+            font-size: 24px;
+            color: white;
+           text-align: center;
+            padding: 10px;
+            border: 3px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+            display: inline-block; /* Ensures the border fits the text */
+        }
+         body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333; /* Optional: Background color for contrast */
+        }
+      
+       

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title> Sign In Page</title>
+</head>
+<body>
+    <center>
+      <h1 style="color:white;">Welcome to Library Management</h1>
+      <div class="transparent-border">
+
+        <h1>Sign In</h1>
+        <form id="signinForm">
+          <label for="username">Username:</label>
+          <input type="text" id="username" placeholder="Username" required><br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="Password" required><br>
+          <a href="signup.html">Don't have an account? Sign up</a><br>
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
+    </center>
+    <script>
+      document.getElementById('signinForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+          const response = await fetch('http://localhost:3000/signin', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, password }),
+          });
+
+          const result = await response.json();
+
+          if (response.ok) {
+            alert('Sign-in successful!');
+            window.location.href = 'home.html'; // Redirect to the home page
+          } else {
+            alert(result.message || 'Sign-in failed!');
+          }
+        } catch (error) {
+          console.error('Error during sign-in:', error);
+          alert('An error occurred. Please try again.');
+        }
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheets" href="styles.css">
+    <title>Main Page</title>
+   <style>
+   
+        body {
+            background-image: url('lib.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh; /* Ensure the body covers the full height of the viewport */
+        }
+        .transparent-border {
+            font-size: 24px;
+            color: white;
+           text-align: center;
+            padding: 10px;
+            border: 3px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+            display: inline-block; /* Ensures the border fits the text */
+        } /* Basic Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Body */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+    
+    /* Navbar */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Transparent background */
+        color: white;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+    
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-size: 24px;
+        text-decoration: none;
+        color: white;
+    }
+    
+    .nav-menu {
+        list-style: none;
+        display: flex;
+    }
+    
+    .nav-menu li {
+        margin-left: 20px;
+    }
+    
+    .nav-menu a {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        transition: background 0.3s, color 0.3s;
+    }
+    
+    .nav-menu a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #f0f0f0;
+    }
+    
+    .search-form {
+        display: flex;
+        align-items: center;
+    }
+    
+    .search-form input[type="text"] {
+        border: none;
+        padding: 5px;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+    
+    .search-form button {
+        background: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .search-form button:hover {
+        background: #ddd;
+    }
+    
+    h1{
+        color:white;
+        font-weight: 100;
+    }
+    .image-container {
+        position: relative;
+        width: 170px;
+        height: 200px;
+        margin-right: 10px; /* Add margin between columns */
+        margin-bottom: 10px; /* Add margin between rows */
+        float: left;
+        padding: 5px;
+       
+    }
+    .image {
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 4%; /* Square top left corner */
+        border-top-right-radius: 4%; /* Square top right corner */
+        border-bottom-left-radius: 5%; /* Rounded bottom left corner */
+        border-bottom-right-radius: 5%; /* Rounded bottom right corner */
+    }
+    .text-overlay {
+        position: center;
+       
+        
+        text-align: center;
+         /* Semi-transparent background */
+        color: white;
+        
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    a{
+        color:white;
+        text-decoration: none;
+    }
+    .container {
+       
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 700px; /* Adjusted width for additional button */
+        margin: auto;
+    }
+    .button-group {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap; /* Allows buttons to wrap if needed */
+    }
+    .button-group button {
+        background-color: #4ea28c;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        display: flex;
+        align-items: center;
+    }
+    .button-group button:hover {
+        background-color: #91c095;
+    }
+    .icon {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+    .icon-add::before {
+        content: '+';
+        font-size: 24px;
+    }
+    .icon-delete::before {
+        content: '🗑️';
+        font-size: 20px;
+    }
+    .icon-return::before {
+        content: '🔙';
+        font-size: 20px;
+    }
+    .icon-take::before {
+        content: '📦'; /* Box emoji for 'Take Item' */
+        font-size: 20px;
+    }
+   </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="#" class="logo">LIBRARY MANAGEMENT</a>
+                <ul class="nav-menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li>
+                    <div class="user-profile">
+                        
+                        <a href="profile.html"><span>Profile</span></a>
+                    </div></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <br><br><br><br>
+    <h1>Available zonal books:</h1>
+    <div class="row">
+        <div class="image-container">
+            <img src="https://jamestkelly.com/wp-content/uploads/2020/05/25bestfantasybooks.jpg" alt="Image 1" class="image">
+            <div class="text-overlay">
+                <a href="fantasy.html">fantasy</a>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://www.rd.com/wp-content/uploads/2021/11/mystery-books-collage-FT2.jpg" alt="Image 2" class="image">
+            <div class="text-overlay">
+                <a href="mystery.html">Mystery</a>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://cdn.kobo.com/book-images/93659c7d-5d79-4b9d-afce-fdaa56d8e81c/353/569/90/False/best-romance-novels.jpg" alt="Image 3" class="image">
+            <div class="text-overlay">
+                <a href="romance.html">Romance</a>
+            </div>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="image-container">
+            <img src="https://m.media-amazon.com/images/I/715jjfXVBlL._AC_UF1000,1000_QL80_.jpg" alt="Image 1" class="image">
+            <div class="text-overlay">
+                <a href="horror.html">Horror</a>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://149349728.v2.pressablecdn.com/wp-content/uploads/2019/03/1*qloGehcKpsZ1mJOyqBzqMA.jpeg" alt="Image 2" class="image">
+            <div class="text-overlay">
+                <a href="fiction.html">Fiction</a>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3_2roy7Y2-sf-g8OyfH4PC-LTG-dc8vp9iw&s" alt="Image 3" class="image">
+            <div class="text-overlay">
+                <a href="thriller.html">Thriller</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1>Manage Items</h1>
+        <div class="button-group">
+            <button id="add-item-btn"><span class="icon icon-add"></span>Add Book</button>
+            <button id="delete-item-btn"><span class="icon icon-delete"></span>Delete Book</button>
+            <button id="take-item-btn"><span class="icon icon-take"></span>Take Book</button>
+            <button id="return-item-btn"><span class="icon icon-return"></span>Return Book</button>
+        </div>
+    
+        <!-- Content for items or actions would go here -->
+    
+    </div>
+    <div class="user-profile">
+        <img id="profilePic" src="" alt="">
+        <a id="profileLink" href="#"><span id="userName"></span></a>
+    </div>
+    <script>
+        
+            document.getElementById('add-item-btn').addEventListener('click', function() {
+                window.location.href = 'addbook.html'; // Replace with the URL of your add item page
+            });
+            document.getElementById('delete-item-btn').addEventListener('click', function() {
+                window.location.href = 'deletebook.html'; // Replace with the URL of your add item page
+            });
+            document.getElementById('take-item-btn').addEventListener('click', function() {
+                window.location.href = 'takebook.html'; // Replace with the URL of your add item page
+            });
+            document.getElementById('return-item-btn').addEventListener('click', function() {
+                window.location.href = 'return.html'; // Replace with the URL of your add item page
+            });
+            const user = {
+                name: "",
+                profileUrl: "profile.html", // or a dynamic URL like `/profile/123`
+                profilePic: "profile-pic.jpg" // replace with the actual image path
+            };
+        
+            // Set the profile picture
+            document.getElementById('profilePic').src = user.profilePic;
+        
+            // Set the user name
+            document.getElementById('userName').textContent = user.name;
+        
+            // Set the profile link
+            document.getElementById('profileLink').href = user.profileUrl;
+
+
+
+
+
+
+        </script>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
